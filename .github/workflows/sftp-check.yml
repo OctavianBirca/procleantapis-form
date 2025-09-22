@@ -4,27 +4,24 @@ on:
   workflow_dispatch:
 
 jobs:
-  check:
+  sftp-list:
     runs-on: ubuntu-latest
     steps:
-      - name: Print config (masked)
+      - name: Install sshpass (for non-interactive sftp)
         run: |
-          echo "Host set: ${{ secrets.SFTP_HOST != '' }}"
-          echo "User set: ${{ secrets.SFTP_USERNAME != '' }}"
-          echo "Port set: ${{ secrets.SFTP_PORT != '' }}"
-          echo "Remote path set: ${{ secrets.REMOTE_PLUGIN_PATH != '' }}"
+          sudo apt-get update
+          sudo apt-get install -y sshpass
 
-      - name: SSH to server and list plugin directory
-        uses: appleboy/ssh-action@v1.0.3
+      - name: List remote plugin directory via SFTP
         env:
-          REMOTE_PLUGIN_PATH: ${{ secrets.REMOTE_PLUGIN_PATH }}
-        with:
-          host: ${{ secrets.SFTP_HOST }}
-          username: ${{ secrets.SFTP_USERNAME }}
-          password: ${{ secrets.SFTP_PASSWORD }}
-          port: ${{ secrets.SFTP_PORT || 22 }}
-          script: |
-            set -e
-            echo "Listing $REMOTE_PLUGIN_PATH"
-            ls -la "$REMOTE_PLUGIN_PATH"
-            echo "OK: remote path accessible"
+          HOST: ${{ secrets.SFTP_HOST }}
+          PORT: ${{ secrets.SFTP_PORT }}
+          USER: ${{ secrets.SFTP_USERNAME }}
+          PASS: ${{ secrets.SFTP_PASSWORD }}
+          REMOTE: ${{ secrets.REMOTE_PLUGIN_PATH }}
+        run: |
+          echo "Listing $REMOTE on $USER@$HOST:$PORT"
+          sshpass -p "$PASS" sftp -oBatchMode=no -oStrictHostKeyChecking=no -P "$PORT" "$USER@$HOST" <<EOF
+ls -la $REMOTE
+EOF
+          echo "OK: remote path accessible"

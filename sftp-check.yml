@@ -1,0 +1,23 @@
+name: SFTP Connection Check
+
+on:
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: SSH to server and list plugin directory
+        uses: appleboy/ssh-action@v1.0.3
+        env:
+          REMOTE_PLUGIN_PATH: ${{ secrets.REMOTE_PLUGIN_PATH }}
+        with:
+          host: ${{ secrets.SFTP_HOST }}
+          username: ${{ secrets.SFTP_USERNAME }}
+          password: ${{ secrets.SFTP_PASSWORD }}
+          port: ${{ secrets.SFTP_PORT }}
+          script: |
+            set -e
+            echo "Listing $REMOTE_PLUGIN_PATH"
+            ls -la "$REMOTE_PLUGIN_PATH"
+            echo "OK: remote path accessible"

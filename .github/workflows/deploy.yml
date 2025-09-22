@@ -1,0 +1,35 @@
+# Deploy to IONOS via GitHub Actions
+
+name: Deploy to IONOS
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v2
+    
+    - name: Setup Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '16'
+    
+    - name: Deploy to IONOS via FTP
+      uses: SamKirkland/FTP-Deploy-Action@4.0.0
+      with:
+        server: ${{ secrets.IONOS_FTP_SERVER }}
+        username: ${{ secrets.IONOS_FTP_USERNAME }}
+        password: ${{ secrets.IONOS_FTP_PASSWORD }}
+        local-dir: ./
+        server-dir: /formular/
+        exclude: |
+          **/.git*
+          **/.git*/**
+          **/node_modules/**
+          .github/

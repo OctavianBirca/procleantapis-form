@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demande de Devis - Tapis, Textile, Literie</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Demande de Devis</h1>
+        
+        <!-- Navigation Tabs -->
+        <div class="tabs">
+            <button class="tab-button active" data-tab="tapis">Tapis</button>
+            <button class="tab-button" data-tab="textile">Textile</button>
+            <button class="tab-button" data-tab="literie">Literie</button>
+            <button class="tab-button" data-tab="professionnel">Devis pour les professionnels</button>
+        </div>
+
+        <!-- Tab Content -->
+        <div class="tab-content active" id="tapis">
+            <h2>Type de Tapis</h2>
+            
+            <div class="carpet-grid">
+                <div class="carpet-card" data-name="Poil Court" data-price="9">
+                    <div class="carpet-image" style="background-image: url('images/soft_beige_carpet.png');"></div>
+                    <div class="carpet-info">
+                        <h3>Poil Court</h3>
+                        <p class="price">9 €/m²</p>
+                    </div>
+                </div>
+                
+                <div class="carpet-card" data-name="Nylon" data-price="9">
+                    <div class="carpet-image" style="background-image: url('images/shaggy_carpet.jpg');"></div>
+                    <div class="carpet-info">
+                        <h3>Nylon</h3>
+                        <p class="price">9 €/m²</p>
+                    </div>
+                </div>
+                
+                <div class="carpet-card" data-name="Acrylique" data-price="9">
+                    <div class="carpet-image" style="background-image: url('images/jute_carpet.jpg');"></div>
+                    <div class="carpet-info">
+                        <h3>Acrylique</h3>
+                        <p class="price">9 €/m²</p>
+                    </div>
+                </div>
+                
+                <div class="carpet-card" data-name="Shaggy" data-price="12">
+                    <div class="carpet-image" style="background-image: url('images/shaggy_carpet.jpg');"></div>
+                    <div class="carpet-info">
+                        <h3>Shaggy</h3>
+                        <p class="price">12 €/m²</p>
+                    </div>
+                </div>
+                
+                <div class="carpet-card" data-name="Soie" data-price="12">
+                    <div class="carpet-image" style="background-image: url('images/silk_carpet.jpg');"></div>
+                    <div class="carpet-info">
+                        <h3>Soie</h3>
+                        <p class="price">12 €/m²</p>
+                    </div>
+                </div>
+                
+                <div class="carpet-card" data-name="Jute" data-price="12">
+                    <div class="carpet-image" style="background-image: url('images/jute_carpet.jpg');"></div>
+                    <div class="carpet-info">
+                        <h3>Jute</h3>
+                        <p class="price">12 €/m²</p>
+                    </div>
+                </div>
+                
+                <div class="carpet-card" data-name="Laine" data-price="12">
+                    <div class="carpet-image" style="background-image: url('images/wool-carpet.jpg');"></div>
+                    <div class="carpet-info">
+                        <h3>Laine</h3>
+                        <p class="price">12 €/m²</p>
+                    </div>
+                </div>
+                
+                <div class="carpet-card" data-name="Viscose" data-price="12">
+                    <div class="carpet-image" style="background-image: url('images/silk_carpet.jpg');"></div>
+                    <div class="carpet-info">
+                        <h3>Viscose</h3>
+                        <p class="price">12 €/m²</p>
+                    </div>
+                </div>
+                
+                <div class="carpet-card" data-name="3D" data-price="12">
+                    <div class="carpet-image" style="background-image: url('images/nettoyage-tapis-3d-paris.png');"></div>
+                    <div class="carpet-info">
+                        <h3>3D</h3>
+                        <p class="price">12 €/m²</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Dimensions Section -->
+            <div class="dimensions-section">
+                <h3>Dimensions</h3>
+                
+                <div class="dimension-group">
+                    <label for="largeur">Largeur</label>
+                    <div class="dimension-control">
+                        <input type="range" id="largeur-range" min="1" max="10" step="0.1" value="2">
+                        <input type="number" id="largeur-input" min="1" max="10" step="0.1" value="2">
+                        <span class="unit">m</span>
+                    </div>
+                </div>
+                
+                <div class="dimension-group">
+                    <label for="longueur">Longueur</label>
+                    <div class="dimension-control">
+                        <input type="range" id="longueur-range" min="1" max="10" step="0.1" value="3">
+                        <input type="number" id="longueur-input" min="1" max="10" step="0.1" value="3">
+                        <span class="unit">m</span>
+                    </div>
+                </div>
+                
+                <!-- Surface Display -->
+                <div class="surface-display">
+                    <span>Surface: <strong id="surface-value">6.0 m²</strong></span>
+                </div>
+            </div>
+            
+            <!-- Options Section -->
+            <div class="options-section">
+                <h3>Options</h3>
+                <div class="option-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="steam-cleaner" data-price="15">
+                        <span class="checkmark"></span>
+                        Nettoyeur à vapeur +15€
+                    </label>
+                </div>
+            </div>
+            
+            <!-- Delivery Section -->
+            <div class="delivery-section">
+                <h3>Livraison</h3>
+                <div class="delivery-options">
+                    <label class="radio-label">
+                        <input type="radio" name="delivery" value="pickup" data-cost="0" checked>
+                        <span class="radio-text">Livraison et retrait par mes soins (GRATUIT)</span>
+                    </label>
+                    
+                    <label class="radio-label">
+                        <input type="radio" name="delivery" value="local" data-cost="0">
+                        <span class="radio-text">Jusqu'à 20 km de Livry-Gargan (GRATUIT)</span>
+                    </label>
+                    
+                    <label class="radio-label">
+                        <input type="radio" name="delivery" value="distant" data-cost="20">
+                        <span class="radio-text">Plus de 20 km (à partir de 20 €)</span>
+                    </label>
+                </div>
+            </div>
+            
+            <!-- Price Calculation Section -->
+            <div class="price-section">
+                <h3>Calcul du Prix</h3>
+                <div class="price-breakdown">
+                    <div class="price-line">
+                        <span>Tapis sélectionné:</span>
+                        <span id="selected-carpet">Aucun sélectionné</span>
+                    </div>
+                    <div class="price-line">
+                        <span>Surface:</span>
+                        <span id="calc-surface">6.0 m²</span>
+                    </div>
+                    <div class="price-line">
+                        <span>Prix matériel:</span>
+                        <span id="material-cost">0.00 €</span>
+                    </div>
+                    <div class="price-line">
+                        <span>Nettoyeur à vapeur:</span>
+                        <span id="steam-cost">0.00 €</span>
+                    </div>
+                    <div class="price-line">
+                        <span>Livraison:</span>
+                        <span id="delivery-cost">0.00 €</span>
+                    </div>
+                    <div class="price-line total">
+                        <span>TOTAL:</span>
+                        <span id="total-price">0.00 €</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="tab-content" id="textile">
+            <h2>Textile</h2>
+            
+            <div class="textile-grid">
+                <div class="textile-card" data-name="Fauteuil" data-price="15">
+                    <div class="textile-image">
+                        <img src="images/fauteuil.png" alt="Fauteuil">
+                    </div>
+                    <div class="textile-info">
+                        <h3>Fauteuil</h3>
+                        <p class="textile-price">15 €</p>
+                    </div>
+                    <div class="quantity-control">
+                        <label for="fauteuil-qty">Quantité:</label>
+                        <div class="qty-controls">
+                            <button type="button" class="qty-btn minus" data-target="fauteuil-qty">-</button>
+                            <input type="number" id="fauteuil-qty" class="qty-input" min="0" value="0">
+                            <button type="button" class="qty-btn plus" data-target="fauteuil-qty">+</button>
+                        </div>
+                    </div>
+                    <div class="steam-option">
+                        <label class="steam-label">
+                            <input type="checkbox" id="fauteuil-steam" class="steam-checkbox">
+                            <span class="steam-text">Nettoyeur à vapeur +15€</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="textile-card" data-name="Canapé 2 places" data-price="65">
+                    <div class="textile-image">
+                        <img src="images/canape-2.png" alt="Canapé 2 places">
+                    </div>
+                    <div class="textile-info">
+                        <h3>Canapé 2 places</h3>
+                        <p class="textile-price">65 €</p>
+                    </div>
+                    <div class="quantity-control">
+                        <label for="canape2-qty">Quantité:</label>
+                        <div class="qty-controls">
+                            <button type="button" class="qty-btn minus" data-target="canape2-qty">-</button>
+                            <input type="number" id="canape2-qty" class="qty-input" min="0" value="0">
+                            <button type="button" class="qty-btn plus" data-target="canape2-qty">+</button>
+                        </div>
+                    </div>
+                    <div class="steam-option">
+                        <label class="steam-label">
+                            <input type="checkbox" id="canape2-steam" class="steam-checkbox">
+                            <span class="steam-text">Nettoyeur à vapeur +15€</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="textile-card" data-name="Canapé 3 ou 5 places" data-price="85">
+                    <div class="textile-image">
+                        <img src="images/canape-3.png" alt="Canapé 3 ou 5 places">
+                    </div>
+                    <div class="textile-info">
+                        <h3>Canapé 3 ou 5 places</h3>
+                        <p class="textile-price">85 €</p>
+                    </div>
+                    <div class="quantity-control">
+                        <label for="canape35-qty">Quantité:</label>
+                        <div class="qty-controls">
+                            <button type="button" class="qty-btn minus" data-target="canape35-qty">-</button>
+                            <input type="number" id="canape35-qty" class="qty-input" min="0" value="0">
+                            <button type="button" class="qty-btn plus" data-target="canape35-qty">+</button>
+                        </div>
+                    </div>
+                    <div class="steam-option">
+                        <label class="steam-label">
+                            <input type="checkbox" id="canape35-steam" class="steam-checkbox">
+                            <span class="steam-text">Nettoyeur à vapeur +15€</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="textile-card" data-name="Canapé d'angle 3 places" data-price="105">
+                    <div class="textile-image">
+                        <img src="images/canape-4.png" alt="Canapé d'angle 3 places">
+                    </div>
+                    <div class="textile-info">
+                        <h3>Canapé d'angle 3 places</h3>
+                        <p class="textile-price">105 €</p>
+                    </div>
+                    <div class="quantity-control">
+                        <label for="canapeangle3-qty">Quantité:</label>
+                        <div class="qty-controls">
+                            <button type="button" class="qty-btn minus" data-target="canapeangle3-qty">-</button>
+                            <input type="number" id="canapeangle3-qty" class="qty-input" min="0" value="0">
+                            <button type="button" class="qty-btn plus" data-target="canapeangle3-qty">+</button>
+                        </div>
+                    </div>
+                    <div class="steam-option">
+                        <label class="steam-label">
+                            <input type="checkbox" id="canapeangle3-steam" class="steam-checkbox">
+                            <span class="steam-text">Nettoyeur à vapeur +15€</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="textile-card" data-name="Canapé d'angle 4 & 5 places" data-price="125">
+                    <div class="textile-image">
+                        <img src="images/canape-5.png" alt="Canapé d'angle 4 & 5 places">
+                    </div>
+                    <div class="textile-info">
+                        <h3>Canapé d'angle 4 & 5 places</h3>
+                        <p class="textile-price">125 €</p>
+                    </div>
+                    <div class="quantity-control">
+                        <label for="canapeangle45-qty">Quantité:</label>
+                        <div class="qty-controls">
+                            <button type="button" class="qty-btn minus" data-target="canapeangle45-qty">-</button>
+                            <input type="number" id="canapeangle45-qty" class="qty-input" min="0" value="0">
+                            <button type="button" class="qty-btn plus" data-target="canapeangle45-qty">+</button>
+                        </div>
+                    </div>
+                    <div class="steam-option">
+                        <label class="steam-label">
+                            <input type="checkbox" id="canapeangle45-steam" class="steam-checkbox">
+                            <span class="steam-text">Nettoyeur à vapeur +15€</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="textile-card special" data-name="Canapé en U ou plus de 5 places" data-price="devis">
+                    <div class="textile-image">
+                        <img src="images/canape-U.png" alt="Canapé en U ou plus de 5 places">
+                    </div>
+                    <div class="textile-info">
+                        <h3>Canapé en U ou plus de 5 places</h3>
+                        <p class="textile-price">sur devis</p>
+                    </div>
+                    <div class="quantity-control">
+                        <label for="canapeu-qty">Quantité:</label>
+                        <div class="qty-controls">
+                            <button type="button" class="qty-btn minus" data-target="canapeu-qty">-</button>
+                            <input type="number" id="canapeu-qty" class="qty-input" min="0" value="0">
+                            <button type="button" class="qty-btn plus" data-target="canapeu-qty">+</button>
+                        </div>
+                    </div>
+                    <div class="steam-option">
+                        <label class="steam-label">
+                            <input type="checkbox" id="canapeu-steam" class="steam-checkbox">
+                            <span class="steam-text">Nettoyeur à vapeur +15€</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Delivery Options for Textile -->
+            <div class="delivery-section">
+                <h3>Options de livraison</h3>
+                <div class="delivery-options">
+                    <div class="delivery-option">
+                        <input type="radio" id="textile-delivery-pickup" name="textile-delivery" value="pickup" data-cost="0" checked>
+                        <label for="textile-delivery-pickup">
+                            <span class="radio-text">Livraison et retrait par mes soins (GRATUIT)</span>
+                        </label>
+                    </div>
+                    
+                    <div class="delivery-option">
+                        <input type="radio" id="textile-delivery-local" name="textile-delivery" value="local" data-cost="0">
+                        <label for="textile-delivery-local">
+                            <span class="radio-text">Jusqu'à 20 km de Livry-Gargan (GRATUIT)</span>
+                        </label>
+                    </div>
+                    
+                    <div class="delivery-option">
+                        <input type="radio" id="textile-delivery-distant" name="textile-delivery" value="distant" data-cost="20">
+                        <label for="textile-delivery-distant">
+                            <span class="radio-text">Plus de 20 km (à partir de 20 €)</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Price Calculation for Textile -->
+            <div class="price-section">
+                <h3>Calcul du prix - Textile</h3>
+                <div class="price-breakdown">
+                    <div class="price-line">
+                        <span>Articles sélectionnés:</span>
+                        <span id="textile-selected-items">Aucun sélectionné</span>
+                    </div>
+                    <div class="price-line">
+                        <span>Coût des articles:</span>
+                        <span id="textile-items-cost">0.00 €</span>
+                    </div>
+                    <div class="price-line">
+                        <span>Nettoyeur à vapeur:</span>
+                        <span id="textile-steam-cost">0.00 €</span>
+                    </div>
+                    <div class="price-line">
+                        <span>Livraison:</span>
+                        <span id="textile-delivery-cost">0.00 €</span>
+                    </div>
+                    <div class="price-line total">
+                        <span>TOTAL:</span>
+                        <span id="textile-total-price">0.00 €</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="tab-content" id="literie">
+            <h2>Literie</h2>
+            
+            <div class="textile-grid">
+                <div class="textile-card" data-name="Matelas enfant" data-price="25">
+                    <div class="textile-image">
+                        <img src="images/nettoyage-matelas-enfant.png" alt="Matelas enfant">
+                    </div>
+                    <div class="textile-info">
+                        <h3>Matelas enfant</h3>
+                        <p class="textile-price">25 €</p>
+                    </div>
+                    <div class="quantity-control">
+                        <label for="matelas-enfant-qty">Quantité:</label>
+                        <div class="qty-controls">
+                            <button type="button" class="qty-btn minus" data-target="matelas-enfant-qty">-</button>
+                            <input type="number" id="matelas-enfant-qty" class="qty-input" min="0" value="0">
+                            <button type="button" class="qty-btn plus" data-target="matelas-enfant-qty">+</button>
+                        </div>
+                    </div>
+                    <div class="verso-option">
+                        <label class="verso-label">
+                            <input type="checkbox" id="matelas-enfant-verso" class="verso-checkbox literie-verso">
+                            <span class="verso-text">Verso +15€</span>
+                        </label>
+                    </div>
+                    <div class="steam-option">
+                        <label class="steam-label">
+                            <input type="checkbox" id="matelas-enfant-steam" class="steam-checkbox literie-steam">
+                            <span class="steam-text">Nettoyage vapeur +15€</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="textile-card" data-name="Matelas 1 place" data-price="45">
+                    <div class="textile-image">
+                        <img src="images/nettoyage-matelas-1-personne.png" alt="Matelas 1 place">
+                    </div>
+                    <div class="textile-info">
+                        <h3>Matelas 1 place</h3>
+                        <p class="textile-price">45 €</p>
+                    </div>
+                    <div class="quantity-control">
+                        <label for="matelas-1place-qty">Quantité:</label>
+                        <div class="qty-controls">
+                            <button type="button" class="qty-btn minus" data-target="matelas-1place-qty">-</button>
+                            <input type="number" id="matelas-1place-qty" class="qty-input" min="0" value="0">
+                            <button type="button" class="qty-btn plus" data-target="matelas-1place-qty">+</button>
+                        </div>
+                    </div>
+                    <div class="verso-option">
+                        <label class="verso-label">
+                            <input type="checkbox" id="matelas-1place-verso" class="verso-checkbox literie-verso">
+                            <span class="verso-text">Verso +15€</span>
+                        </label>
+                    </div>
+                    <div class="steam-option">
+                        <label class="steam-label">
+                            <input type="checkbox" id="matelas-1place-steam" class="steam-checkbox literie-steam">
+                            <span class="steam-text">Nettoyage vapeur +15€</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="textile-card" data-name="Matelas 2 places" data-price="65">
+                    <div class="textile-image">
+                        <img src="images/nettoyage-matelas-2-personne.png" alt="Matelas 2 places">
+                    </div>
+                    <div class="textile-info">
+                        <h3>Matelas 2 places</h3>
+                        <p class="textile-price">65 €</p>
+                    </div>
+                    <div class="quantity-control">
+                        <label for="matelas-2places-qty">Quantité:</label>
+                        <div class="qty-controls">
+                            <button type="button" class="qty-btn minus" data-target="matelas-2places-qty">-</button>
+                            <input type="number" id="matelas-2places-qty" class="qty-input" min="0" value="0">
+                            <button type="button" class="qty-btn plus" data-target="matelas-2places-qty">+</button>
+                        </div>
+                    </div>
+                    <div class="verso-option">
+                        <label class="verso-label">
+                            <input type="checkbox" id="matelas-2places-verso" class="verso-checkbox literie-verso">
+                            <span class="verso-text">Verso +15€</span>
+                        </label>
+                    </div>
+                    <div class="steam-option">
+                        <label class="steam-label">
+                            <input type="checkbox" id="matelas-2places-steam" class="steam-checkbox literie-steam">
+                            <span class="steam-text">Nettoyage vapeur +15€</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Delivery Options for Literie -->
+            <div class="delivery-section">
+                <h3>Options de livraison</h3>
+                <div class="delivery-options">
+                    <div class="delivery-option">
+                        <input type="radio" id="literie-delivery-pickup" name="literie-delivery" value="pickup" data-cost="0" checked>
+                        <label for="literie-delivery-pickup">
+                            <span class="radio-text">Livraison et retrait par mes soins (GRATUIT)</span>
+                        </label>
+                    </div>
+                    
+                    <div class="delivery-option">
+                        <input type="radio" id="literie-delivery-local" name="literie-delivery" value="local" data-cost="0">
+                        <label for="literie-delivery-local">
+                            <span class="radio-text">Jusqu'à 20 km de Livry-Gargan (GRATUIT)</span>
+                        </label>
+                    </div>
+                    
+                    <div class="delivery-option">
+                        <input type="radio" id="literie-delivery-distant" name="literie-delivery" value="distant" data-cost="20">
+                        <label for="literie-delivery-distant">
+                            <span class="radio-text">Plus de 20 km (à partir de 20 €)</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Price Calculation for Literie -->
+            <div class="price-section">
+                <h3>Calcul du prix - Literie</h3>
+                <div class="price-breakdown">
+                    <div class="price-line">
+                        <span>Articles sélectionnés:</span>
+                        <span id="literie-selected-items">Aucun sélectionné</span>
+                    </div>
+                    <div class="price-line">
+                        <span>Coût des articles:</span>
+                        <span id="literie-items-cost">0.00 €</span>
+                    </div>
+                    <div class="price-line">
+                        <span>Verso du matelas:</span>
+                        <span id="literie-verso-cost">0.00 €</span>
+                    </div>
+                    <div class="price-line">
+                        <span>Nettoyage vapeur:</span>
+                        <span id="literie-steam-cost">0.00 €</span>
+                    </div>
+                    <div class="price-line">
+                        <span>Livraison:</span>
+                        <span id="literie-delivery-cost">0.00 €</span>
+                    </div>
+                    <div class="price-line total">
+                        <span>TOTAL:</span>
+                        <span id="literie-total-price">0.00 €</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="tab-content" id="professionnel">
+            <h2>Devis pour les professionnels</h2>
+            
+            <div class="professional-info">
+                <div class="contact-card">
+                    <h3>Contactez-nous pour un devis personnalisé</h3>
+                    <p>Nous proposons des tarifs préférentiels pour les professionnels et les commandes en volume.</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <strong>📞 Téléphone:</strong>
+                            <span>+33 6 05 53 50 10</span>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <strong>📧 Email:</strong>
+                            <span>info@procleantapis.fr</span>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <strong>📍 Adresse:</strong>
+                            <span>135 avenue Liegeard<br>93190 LIVRY GARGAN</span>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <strong>🕒 Horaires:</strong>
+                            <span>Lundi - Vendredi: 8h00 - 18h00</span>
+                        </div>
+                    </div>
+                    
+                    <div class="professional-advantages">
+                        <h4>Avantages professionnels:</h4>
+                        <ul>
+                            <li>Tarifs dégressifs selon le volume</li>
+                            <li>Facturation adaptée aux entreprises</li>
+                            <li>Planning flexible pour les chantiers</li>
+                            <li>Devis détaillé sous 24h</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section Données de Contact -->
+    <div class="contact-data-section">
+        <h2>Données de Contact</h2>
+        
+        <div class="contact-form-grid">
+            <div class="contact-row">
+                <div class="form-group">
+                    <label for="nom">Nom</label>
+                    <input type="text" id="nom" name="nom" placeholder="Saisir votre nom" required>
+                </div>
+                <div class="form-group">
+                    <label for="courriel">Courriel</label>
+                    <input type="email" id="courriel" name="courriel" placeholder="Saisir une adresse mail valide" required>
+                </div>
+            </div>
+
+            <div class="contact-row">
+                <div class="form-group">
+                    <label for="telephone">Téléphone</label>
+                    <input type="tel" id="telephone" name="telephone" placeholder="Saisir votre téléphone">
+                </div>
+                <div class="form-group">
+                    <label for="date">Date</label>
+                    <input type="date" id="date" name="date" placeholder="JJ/MM/AAAA">
+                </div>
+            </div>
+
+            <div class="contact-row">
+                <div class="form-group">
+                    <label for="rue">Rue</label>
+                    <input type="text" id="rue" name="rue" placeholder="Saisir votre rue">
+                </div>
+            </div>
+
+            <div class="contact-row">
+                <div class="form-group">
+                    <label for="ville">Ville</label>
+                    <input type="text" id="ville" name="ville" placeholder="Ville">
+                </div>
+                <div class="form-group">
+                    <label for="code-postal">Code Postal</label>
+                    <input type="text" id="code-postal" name="code-postal" placeholder="Code Postal">
+                </div>
+            </div>
+
+            <div class="contact-row">
+                <div class="form-group full-width">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="4" placeholder="Votre message..."></textarea>
+                </div>
+            </div>
+        </div>
+
+        <div class="submit-section">
+            <button type="submit" class="submit-btn">Envoyer la demande</button>
+            
+            <div class="whatsapp-section">
+                <a href="https://wa.me/33605535010" class="whatsapp-btn" target="_blank">
+                    <span class="whatsapp-icon">📱</span>
+                    <span class="whatsapp-text">Devis par WhatsApp</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

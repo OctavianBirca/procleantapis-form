@@ -1,0 +1,146 @@
+<div class="tab-content active" id="tapis">
+  <h2>Type de Tapis</h2>
+  <div class="carpet-grid">
+    <div class="carpet-card" data-name="Poil Court" data-price="9">
+      <div class="carpet-image"><img src="<?php echo esc_url( plugins_url('assets/images/soft_beige_carpet.png', dirname(__DIR__)) ); ?>" alt="Poil Court"></div>
+      <div class="carpet-info">
+        <h3>Poil Court</h3>
+        <p class="price">9 €/m²</p>
+      </div>
+    </div>
+    <div class="carpet-card" data-name="Nylon" data-price="9">
+      <div class="carpet-image"><img src="<?php echo esc_url( plugins_url('assets/images/shaggy_carpet.jpg', dirname(__DIR__)) ); ?>" alt="Nylon"></div>
+      <div class="carpet-info">
+        <h3>Nylon</h3>
+        <p class="price">9 €/m²</p>
+      </div>
+    </div>
+    <div class="carpet-card" data-name="Acrylique" data-price="9">
+      <div class="carpet-image"><img src="<?php echo esc_url( plugins_url('assets/images/jute_carpet.jpg', dirname(__DIR__)) ); ?>" alt="Acrylique"></div>
+      <div class="carpet-info">
+        <h3>Acrylique</h3>
+        <p class="price">9 €/m²</p>
+      </div>
+    </div>
+    <div class="carpet-card" data-name="Shaggy" data-price="12">
+      <div class="carpet-image"><img src="<?php echo esc_url( plugins_url('assets/images/shaggy_carpet.jpg', dirname(__DIR__)) ); ?>" alt="Shaggy"></div>
+      <div class="carpet-info">
+        <h3>Shaggy</h3>
+        <p class="price">12 €/m²</p>
+      </div>
+    </div>
+    <div class="carpet-card" data-name="Soie" data-price="12">
+      <div class="carpet-image"><img src="<?php echo esc_url( plugins_url('assets/images/silk_carpet.jpg', dirname(__DIR__)) ); ?>" alt="Soie"></div>
+      <div class="carpet-info">
+        <h3>Soie</h3>
+        <p class="price">12 €/m²</p>
+      </div>
+    </div>
+    <div class="carpet-card" data-name="Jute" data-price="12">
+      <div class="carpet-image"><img src="<?php echo esc_url( plugins_url('assets/images/jute_carpet.jpg', dirname(__DIR__)) ); ?>" alt="Jute"></div>
+      <div class="carpet-info">
+        <h3>Jute</h3>
+        <p class="price">12 €/m²</p>
+      </div>
+    </div>
+    <div class="carpet-card" data-name="Laine" data-price="12">
+      <div class="carpet-image"><img src="<?php echo esc_url( plugins_url('assets/images/wool-carpet.jpg', dirname(__DIR__)) ); ?>" alt="Laine"></div>
+      <div class="carpet-info">
+        <h3>Laine</h3>
+        <p class="price">12 €/m²</p>
+      </div>
+    </div>
+    <div class="carpet-card" data-name="Viscose" data-price="12">
+      <div class="carpet-image"><img src="<?php echo esc_url( plugins_url('assets/images/silk_carpet.jpg', dirname(__DIR__)) ); ?>" alt="Viscose"></div>
+      <div class="carpet-info">
+        <h3>Viscose</h3>
+        <p class="price">12 €/m²</p>
+      </div>
+    </div>
+    <div class="carpet-card" data-name="3D" data-price="12">
+      <div class="carpet-image"><img src="<?php echo esc_url( plugins_url('assets/images/nettoyage-tapis-3d-paris.png', dirname(__DIR__)) ); ?>" alt="3D"></div>
+      <div class="carpet-info">
+        <h3>3D</h3>
+        <p class="price">12 €/m²</p>
+      </div>
+    </div>
+  </div>
+  <div class="dimensions-section">
+    <h3>Dimensions</h3>
+    <div class="dimension-group">
+      <label for="largeur">Largeur</label>
+      <div class="dimension-control">
+        <input type="range" id="largeur-range" min="1" max="10" step="0.1" value="2">
+        <input type="number" id="largeur-input" min="1" max="10" step="0.1" value="2">
+        <span class="unit">m</span>
+      </div>
+    </div>
+    <div class="dimension-group">
+      <label for="longueur">Longueur</label>
+      <div class="dimension-control">
+        <input type="range" id="longueur-range" min="1" max="10" step="0.1" value="3">
+        <input type="number" id="longueur-input" min="1" max="10" step="0.1" value="3">
+        <span class="unit">m</span>
+      </div>
+    </div>
+    <div class="surface-display">
+      <span>Surface: <strong id="surface-value">6.0 m²</strong></span>
+    </div>
+  </div>
+  <div class="options-section">
+    <h3>Options</h3>
+    <div class="option-group">
+      <label class="checkbox-label">
+        <input type="checkbox" id="steam-cleaner" data-price="15">
+        <span class="checkmark"></span>
+        Nettoyeur à vapeur +15€
+      </label>
+    </div>
+  </div>
+  <div class="delivery-section">
+    <h3>Livraison</h3>
+    <div class="delivery-options">
+      <label class="radio-label">
+        <input type="radio" name="delivery" value="pickup" data-cost="0" checked>
+        <span class="radio-text">Livraison et retrait par mes soins (GRATUIT)</span>
+      </label>
+      <label class="radio-label">
+        <input type="radio" name="delivery" value="local" data-cost="0">
+        <span class="radio-text">Jusqu'à 20 km de Livry-Gargan (GRATUIT)</span>
+      </label>
+      <label class="radio-label">
+        <input type="radio" name="delivery" value="distant" data-cost="20">
+        <span class="radio-text">Plus de 20 km (à partir de 20 €)</span>
+      </label>
+    </div>
+  </div>
+  <div class="price-section">
+    <h3>Calcul du Prix</h3>
+    <div class="price-breakdown">
+      <div class="price-line">
+        <span>Tapis sélectionné:</span>
+        <span id="selected-carpet">Aucun sélectionné</span>
+      </div>
+      <div class="price-line">
+        <span>Surface:</span>
+        <span id="calc-surface">6.0 m²</span>
+      </div>
+      <div class="price-line">
+        <span>Prix matériel:</span>
+        <span id="material-cost">0.00 €</span>
+      </div>
+      <div class="price-line">
+        <span>Nettoyeur à vapeur:</span>
+        <span id="steam-cost">0.00 €</span>
+      </div>
+      <div class="price-line">
+        <span>Livraison:</span>
+        <span id="delivery-cost">0.00 €</span>
+      </div>
+      <div class="price-line total">
+        <span>TOTAL:</span>
+        <span id="total-price">0.00 €</span>
+      </div>
+    </div>
+  </div>
+</div>

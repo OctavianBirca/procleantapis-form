@@ -1,0 +1,122 @@
+<div class="tab-content" id="literie">
+  <h2>Literie</h2>
+  <div class="textile-grid">
+    <div class="textile-card" data-name="Matelas enfant" data-price="25">
+      <div class="textile-image">
+        <img src="<?php echo esc_url( plugins_url('assets/images/nettoyage-matelas-enfant.png', dirname(__DIR__)) ); ?>" alt="Matelas enfant">
+      </div>
+      <div class="textile-info">
+        <h3>Matelas enfant</h3>
+        <p class="textile-price">25 €</p>
+      </div>
+      <div class="quantity-control">
+        <label for="matelas-enfant-qty">Quantité:</label>
+        <div class="qty-controls">
+          <button type="button" class="qty-btn minus" data-target="matelas-enfant-qty">-</button>
+          <input type="number" id="matelas-enfant-qty" class="qty-input" min="0" value="0">
+          <button type="button" class="qty-btn plus" data-target="matelas-enfant-qty">+</button>
+        </div>
+      </div>
+      <div class="verso-option">
+        <label class="verso-label">
+          <input type="checkbox" id="matelas-enfant-verso" class="verso-checkbox literie-verso">
+          <span class="verso-text">Verso +15€</span>
+        </label>
+      </div>
+      <div class="steam-option">
+        <label class="steam-label">
+          <input type="checkbox" id="matelas-enfant-steam" class="steam-checkbox literie-steam">
+          <span class="steam-text">Nettoyage vapeur +15€</span>
+        </label>
+      </div>
+    </div>
+
+    <div class="textile-card" data-name="Matelas 1 place" data-price="45">
+      <div class="textile-image">
+        <img src="<?php echo esc_url( plugins_url('assets/images/nettoyage-matelas-1-personne.png', dirname(__DIR__)) ); ?>" alt="Matelas 1 place">
+      </div>
+      <div class="textile-info">
+        <h3>Matelas 1 place</h3>
+        <p class="textile-price">45 €</p>
+      </div>
+      <div class="quantity-control">
+        <label for="matelas-1place-qty">Quantité:</label>
+        <div class="qty-controls">
+          <button type="button" class="qty-btn minus" data-target="matelas-1place-qty">-</button>
+          <input type="number" id="matelas-1place-qty" class="qty-input" min="0" value="0">
+          <button type="button" class="qty-btn plus" data-target="matelas-1place-qty">+</button>
+        </div>
+      </div>
+      <div class="verso-option">
+        <label class="verso-label">
+          <input type="checkbox" id="matelas-1place-verso" class="verso-checkbox literie-verso">
+          <span class="verso-text">Verso +15€</span>
+        </label>
+      </div>
+      <div class="steam-option">
+        <label class="steam-label">
+          <input type="checkbox" id="matelas-1place-steam" class="steam-checkbox literie-steam">
+          <span class="steam-text">Nettoyage vapeur +15€</span>
+        </label>
+      </div>
+    </div>
+
+    <div class="textile-card" data-name="Matelas 2 places" data-price="65">
+      <div class="textile-image">
+        <img src="<?php echo esc_url( plugins_url('assets/images/nettoyage-matelas-2-personne.png', dirname(__DIR__)) ); ?>" alt="Matelas 2 places">
+      </div>
+      <div class="textile-info">
+        <h3>Matelas 2 places</h3>
+        <p class="textile-price">65 €</p>
+      </div>
+      <div class="quantity-control">
+        <label for="matelas-2places-qty">Quantité:</label>
+        <div class="qty-controls">
+          <button type="button" class="qty-btn minus" data-target="matelas-2places-qty">-</button>
+          <input type="number" id="matelas-2places-qty" class="qty-input" min="0" value="0">
+          <button type="button" class="qty-btn plus" data-target="matelas-2places-qty">+</button>
+        </div>
+      </div>
+      <div class="verso-option">
+        <label class="verso-label">
+          <input type="checkbox" id="matelas-2places-verso" class="verso-checkbox literie-verso">
+          <span class="verso-text">Verso +15€</span>
+        </label>
+      </div>
+      <div class="steam-option">
+        <label class="steam-label">
+          <input type="checkbox" id="matelas-2places-steam" class="steam-checkbox literie-steam">
+          <span class="steam-text">Nettoyage vapeur +15€</span>
+        </label>
+      </div>
+    </div>
+  </div>
+  <div class="delivery-section">
+    <h3>Options de livraison</h3>
+    <div class="delivery-options">
+      <div class="delivery-option">
+        <input type="radio" id="literie-delivery-pickup" name="literie-delivery" value="pickup" data-cost="0" checked>
+        <label for="literie-delivery-pickup"><span class="radio-text">Livraison et retrait par mes soins (GRATUIT)</span></label>
+      </div>
+      <div class="delivery-option">
+        <input type="radio" id="literie-delivery-local" name="literie-delivery" value="local" data-cost="0">
+        <label for="literie-delivery-local"><span class="radio-text">Jusqu'à 20 km de Livry-Gargan (GRATUIT)</span></label>
+      </div>
+      <div class="delivery-option">
+        <input type="radio" id="literie-delivery-distant" name="literie-delivery" value="distant" data-cost="20">
+        <label for="literie-delivery-distant"><span class="radio-text">Plus de 20 km (à partir de 20 €)</span></label>
+      </div>
+    </div>
+  </div>
+  <div class="price-section">
+    <h3>Calcul du prix - Literie</h3>
+    <div class="price-breakdown">
+      <div class="price-line"><span>Articles sélectionnés:</span><span id="literie-selected-items">Aucun sélectionné</span></div>
+      <div class="price-line"><span>Coût des articles:</span><span id="literie-items-cost">0.00 €</span></div>
+      <div class="price-line"><span>Verso du matelas:</span><span id="literie-verso-cost">0.00 €</span></div>
+      <div class="price-line"><span>Nettoyage vapeur:</span><span id="literie-steam-cost">0.00 €</span></div>
+      <div class="price-line"><span>Livraison:</span><span id="literie-delivery-cost">0.00 €</span></div>
+      <div class="price-line total"><span>TOTAL:</span><span id="literie-total-price">0.00 €</span></div>
+    </div>
+  </div>
+</div>

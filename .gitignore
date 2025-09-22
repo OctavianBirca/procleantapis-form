@@ -1,0 +1,17 @@
+# Ignore sensitive/debug configs and build artifacts
+# IMPORTANT: prevents leaking credentials from debug/wp-config.php
+/debug/
+*.zip
+*.log
+.DS_Store
+.vscode/
+node_modules/
+dist/
+build/
+coverage/
+Thumbs.db
+
+# WordPress typical ignores (tune as needed)
+wp-config.php
+wp-content/uploads/
+wp-content/cache/
